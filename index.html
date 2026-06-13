@@ -15,13 +15,14 @@
 /* ===== TOKENS & RESET ===== */
 :root {
   --slate:  #3B4A5A; /* fond principal — ardoise gris-bleu */
-  --tile:   #B03020; /* accent signature — tuile terre cuite sombre */
+  --azur:   #1577BE; /* accent signature — bleu de marque ToitSûr (aplats, CTA) */
   --sky:    #F0F4F8; /* texte principal, fond cards — ciel blanc IDF */
   --zinc:   #253342; /* sections alternées — zinc sombre */
   --mist:   #8DA0B3; /* texte secondaire, labels — brume grise */
   --mortar: #D4DDE6; /* bordures, séparateurs — mortier pâle */
 
-  --tile-bright: #C9442F; /* variante éclaircie pour contraste AA du texte sur slate */
+  --azur-bright: #58ABE0; /* bleu clair — texte/labels sur ardoise, contraste AA */
+  --azur-dark: #0F5E96; /* bleu profond — états hover des aplats */
 
   --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
   --font-body: 'Source Sans 3', system-ui, sans-serif;
@@ -58,7 +59,7 @@ img, svg { display: block; }
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--tile-bright);
+  color: var(--azur-bright);
   font-size: 14px;
   margin-bottom: 14px;
   display: inline-block;
@@ -100,10 +101,10 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
   line-height: 1;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn-tile { background: var(--tile); color: var(--sky); }
-.btn-tile:hover { background: var(--tile-bright); }
-.btn-ghost-tile { background: transparent; border-color: var(--tile); color: var(--tile-bright); }
-.btn-ghost-tile:hover { background: var(--tile); color: var(--sky); }
+.btn-azur { background: var(--azur); color: var(--sky); }
+.btn-azur:hover { background: var(--azur-dark); }
+.btn-ghost-azur { background: transparent; border-color: var(--azur); color: var(--azur-bright); }
+.btn-ghost-azur:hover { background: var(--azur); color: var(--sky); }
 .btn-ghost-sky { background: transparent; border-color: var(--sky); color: var(--sky); }
 .btn-ghost-sky:hover { background: var(--sky); color: var(--zinc); }
 .btn-lg { font-size: 19px; padding: 16px 28px; }
@@ -118,7 +119,7 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
   position: fixed;
   top: 0; left: 0; right: 0;
   height: var(--banner-h);
-  background: var(--tile);
+  background: var(--azur);
   color: var(--sky);
   z-index: 1000;
   display: flex;
@@ -174,7 +175,7 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
   line-height: 1;
 }
 .logo .t1 { color: var(--sky); }
-.logo .t2 { color: var(--tile-bright); }
+.logo .t2 { color: var(--azur-bright); }
 
 .nav { display: flex; align-items: center; gap: 26px; }
 .nav-links { display: flex; gap: 22px; }
@@ -187,7 +188,7 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
   letter-spacing: 0.04em;
   transition: color 0.2s ease;
 }
-.nav-links a:hover, .nav-links a.active { color: var(--tile-bright); }
+.nav-links a:hover, .nav-links a.active { color: var(--azur-bright); }
 
 .header-cta { display: flex; gap: 10px; }
 .header-cta .btn { font-size: 14px; padding: 10px 16px; }
@@ -229,7 +230,7 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
   color: var(--sky);
   letter-spacing: 0.03em;
 }
-.mobile-nav a:hover { color: var(--tile-bright); }
+.mobile-nav a:hover { color: var(--azur-bright); }
 .mobile-nav .btn { font-size: 18px; padding: 14px 24px; margin-top: 10px; }
 .mobile-close {
   position: absolute; top: 24px; right: 24px;
@@ -276,7 +277,7 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--tile-bright);
+  color: var(--azur-bright);
   font-size: clamp(13px, 1.6vw, 16px);
   margin-bottom: 22px;
 }
@@ -288,7 +289,7 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
   letter-spacing: 0.005em;
 }
 .hero h1 .l1 { display: block; color: var(--sky); font-size: clamp(48px, 11vw, 110px); }
-.hero h1 .l2 { display: block; color: var(--tile-bright); font-size: clamp(56px, 13vw, 132px); }
+.hero h1 .l2 { display: block; color: var(--azur-bright); font-size: clamp(56px, 13vw, 132px); }
 .hero-sub {
   color: var(--mist);
   font-size: clamp(16px, 2.2vw, 20px);
@@ -332,16 +333,16 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
 .service-card {
   background: var(--slate);
   border-radius: var(--radius);
-  border-top: 3px solid rgba(176,48,32,0.55);
+  border-top: 3px solid rgba(21,119,190,0.55);
   padding: 30px 26px;
   transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 .service-card:hover {
   background: #45566a;
-  border-top-color: var(--tile);
+  border-top-color: var(--azur);
   transform: translateY(-3px);
 }
-.service-icon { color: var(--tile-bright); margin-bottom: 18px; }
+.service-icon { color: var(--azur-bright); margin-bottom: 18px; }
 .service-card h3 {
   font-family: var(--font-display);
   font-weight: 700;
@@ -359,13 +360,13 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
 .zone-col {
   background: var(--zinc);
   border-radius: var(--radius);
-  border-top: 2px solid var(--tile);
+  border-top: 2px solid var(--azur);
   padding: 32px 28px;
 }
 .zone-dept {
   font-family: var(--font-display);
   font-weight: 800;
-  color: var(--tile-bright);
+  color: var(--azur-bright);
   font-size: 64px;
   line-height: 0.9;
 }
@@ -410,7 +411,7 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 90px;
-  color: var(--tile);
+  color: var(--azur);
   opacity: 0.2;
   line-height: 1;
   z-index: -1;
@@ -435,21 +436,28 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
   background: var(--zinc);
   border-radius: var(--radius);
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 22px;
+  margin: 0;
 }
-.work-num {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 88px;
-  color: var(--tile);
-  opacity: 0.15;
-  line-height: 1;
-  align-self: flex-end;
+.work-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
-.work-label { color: var(--mist); font-size: 15px; font-weight: 600; z-index: 1; }
+.work-card:hover img { transform: scale(1.06); }
+.work-label {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  z-index: 1;
+  margin: 0;
+  padding: 36px 18px 16px;
+  color: var(--sky);
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(180deg, transparent 0%, rgba(20,28,36,0.88) 100%);
+}
 .work-overlay {
   position: absolute;
   inset: 0;
@@ -477,12 +485,12 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
 .testi-card {
   background: var(--slate);
   border-radius: var(--radius);
-  border-left: 3px solid var(--tile);
+  border-left: 3px solid var(--azur);
   padding: 28px 26px;
   display: flex;
   flex-direction: column;
 }
-.testi-stars { color: var(--tile-bright); font-size: 15px; letter-spacing: 2px; margin-bottom: 14px; }
+.testi-stars { color: var(--azur-bright); font-size: 15px; letter-spacing: 2px; margin-bottom: 14px; }
 .testi-text { font-style: italic; color: rgba(240,244,248,0.88); font-size: 16px; margin-bottom: 18px; flex-grow: 1; }
 .testi-author {
   font-family: var(--font-display);
@@ -494,7 +502,7 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
 }
 
 /* ===== 8. CONFIANCE ===== */
-.trust { background: var(--tile); }
+.trust { background: var(--azur); }
 .trust .eyebrow { color: rgba(240,244,248,0.7); }
 .trust .section-title { color: var(--sky); }
 .trust-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px 48px; margin-top: 12px; }
@@ -582,20 +590,20 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
 .field input::placeholder, .field textarea::placeholder { color: var(--mist); }
 .field input:focus, .field select:focus, .field textarea:focus {
   outline: none;
-  border-color: var(--tile);
-  box-shadow: 0 0 0 2px rgba(176,48,32,0.18);
+  border-color: var(--azur);
+  box-shadow: 0 0 0 2px rgba(21,119,190,0.22);
 }
 .field textarea { resize: vertical; min-height: 110px; }
 .field select { appearance: none; cursor: pointer; }
 
 .rgpd { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 18px; }
-.rgpd input { width: auto; margin-top: 4px; accent-color: var(--tile); }
+.rgpd input { width: auto; margin-top: 4px; accent-color: var(--azur); }
 .rgpd label { font-size: 13px; color: var(--mist); }
 
 /* ===== 10. FOOTER ===== */
 .footer {
   background: var(--zinc);
-  border-top: 2px solid var(--tile);
+  border-top: 2px solid var(--azur);
   text-align: center;
   padding: 56px 0 40px;
 }
@@ -612,7 +620,7 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
 .footer-phone {
   font-family: var(--font-display);
   font-weight: 700;
-  color: var(--tile-bright);
+  color: var(--azur-bright);
   font-size: 26px;
   letter-spacing: 0.03em;
   display: inline-block;
@@ -687,8 +695,8 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="header-cta">
-        <a href="#contact" class="btn btn-ghost-tile">Devis gratuit <span class="lbl-long">sous 48h</span></a>
-        <a href="tel:+33100000000" class="btn btn-tile" aria-label="Appeler ToitSûr">📞 Appeler <span class="lbl-long">maintenant</span></a>
+        <a href="#contact" class="btn btn-ghost-azur">Devis gratuit <span class="lbl-long">sous 48h</span></a>
+        <a href="tel:+33100000000" class="btn btn-azur" aria-label="Appeler ToitSûr">📞 Appeler <span class="lbl-long">maintenant</span></a>
       </div>
     </nav>
 
@@ -706,7 +714,7 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
   <a href="#zones">Interventions</a>
   <a href="#trust">À propos</a>
   <a href="#contact">Contact</a>
-  <a href="tel:+33100000000" class="btn btn-tile" aria-label="Appeler ToitSûr">📞 Appeler maintenant</a>
+  <a href="tel:+33100000000" class="btn btn-azur" aria-label="Appeler ToitSûr">📞 Appeler maintenant</a>
 </div>
 
 <main>
@@ -730,7 +738,7 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
     </h1>
     <p class="hero-sub">Réparation, rénovation, démoussage. Intervention rapide dans le 94, 77 et 91. Devis gratuit sous 48h.</p>
     <div class="hero-cta">
-      <a href="tel:+33100000000" class="btn btn-tile btn-lg" aria-label="Appeler ToitSûr">📞 Appeler maintenant</a>
+      <a href="tel:+33100000000" class="btn btn-azur btn-lg" aria-label="Appeler ToitSûr">📞 Appeler maintenant</a>
       <a href="#contact" class="btn btn-ghost-sky btn-lg">Demander un devis</a>
     </div>
     <div class="hero-badges">
@@ -876,41 +884,42 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
     <p class="eyebrow reveal">Réalisations</p>
     <h2 class="section-title reveal">Des toitures que nous avons remis en état.</h2>
 
+    <!-- Photos d'illustration (Unsplash, libres). À remplacer par les vraies photos de chantiers. -->
     <div class="work-grid">
-      <div class="work-card reveal">
-        <span class="work-num">01</span>
-        <span class="work-label">Réfection ardoise — Maisons-Alfort (94)</span>
+      <figure class="work-card reveal">
+        <img src="https://images.unsplash.com/photo-1518736346281-76873166a64a?auto=format&fit=crop&w=800&q=70" alt="Réfection d'une toiture en ardoise à Maisons-Alfort (94)" loading="lazy" decoding="async">
+        <figcaption class="work-label">Réfection ardoise — Maisons-Alfort (94)</figcaption>
         <div class="work-overlay">Contactez-nous pour un chantier similaire</div>
-      </div>
-      <div class="work-card reveal">
-        <span class="work-num">02</span>
-        <span class="work-label">Démoussage + traitement — Meaux (77)</span>
+      </figure>
+      <figure class="work-card reveal">
+        <img src="https://images.unsplash.com/photo-1528223871781-8f4c984f6164?auto=format&fit=crop&w=800&q=70" alt="Démoussage et traitement d'une toiture en tuiles à Meaux (77)" loading="lazy" decoding="async">
+        <figcaption class="work-label">Démoussage + traitement — Meaux (77)</figcaption>
         <div class="work-overlay">Contactez-nous pour un chantier similaire</div>
-      </div>
-      <div class="work-card reveal">
-        <span class="work-num">03</span>
-        <span class="work-label">Réparation tuiles après tempête — Créteil (94)</span>
+      </figure>
+      <figure class="work-card reveal">
+        <img src="https://images.unsplash.com/photo-1633759593085-1eaeb724fc88?auto=format&fit=crop&w=800&q=70" alt="Réparation de tuiles après tempête à Créteil (94)" loading="lazy" decoding="async">
+        <figcaption class="work-label">Réparation tuiles après tempête — Créteil (94)</figcaption>
         <div class="work-overlay">Contactez-nous pour un chantier similaire</div>
-      </div>
-      <div class="work-card reveal">
-        <span class="work-num">04</span>
-        <span class="work-label">Remplacement gouttières zinc — Melun (77)</span>
+      </figure>
+      <figure class="work-card reveal">
+        <img src="https://images.unsplash.com/photo-1779755376652-22ca6eba86b8?auto=format&fit=crop&w=800&q=70" alt="Remplacement de gouttières zinc à Melun (77)" loading="lazy" decoding="async">
+        <figcaption class="work-label">Remplacement gouttières zinc — Melun (77)</figcaption>
         <div class="work-overlay">Contactez-nous pour un chantier similaire</div>
-      </div>
-      <div class="work-card reveal">
-        <span class="work-num">05</span>
-        <span class="work-label">Peinture toiture — Évry (91)</span>
+      </figure>
+      <figure class="work-card reveal">
+        <img src="https://images.unsplash.com/photo-1563993356056-b23a9cd265ad?auto=format&fit=crop&w=800&q=70" alt="Peinture de toiture à Évry (91)" loading="lazy" decoding="async">
+        <figcaption class="work-label">Peinture toiture — Évry (91)</figcaption>
         <div class="work-overlay">Contactez-nous pour un chantier similaire</div>
-      </div>
-      <div class="work-card reveal">
-        <span class="work-num">06</span>
-        <span class="work-label">Rénovation complète bac acier — Chelles (77)</span>
+      </figure>
+      <figure class="work-card reveal">
+        <img src="https://images.unsplash.com/photo-1602064828974-fcac67d33f4e?auto=format&fit=crop&w=800&q=70" alt="Rénovation complète d'une toiture en bac acier à Chelles (77)" loading="lazy" decoding="async">
+        <figcaption class="work-label">Rénovation complète bac acier — Chelles (77)</figcaption>
         <div class="work-overlay">Contactez-nous pour un chantier similaire</div>
-      </div>
+      </figure>
     </div>
 
     <div class="work-cta reveal">
-      <a href="#contact" class="btn btn-tile btn-lg">Obtenez un devis pour votre toiture</a>
+      <a href="#contact" class="btn btn-azur btn-lg">Obtenez un devis pour votre toiture</a>
     </div>
   </div>
 </section>
@@ -984,9 +993,9 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
 
       <!-- Canaux directs -->
       <div class="contact-channels reveal">
-        <a href="tel:+33100000000" class="btn btn-tile btn-block" aria-label="Appeler ToitSûr">📞 Appeler maintenant</a>
+        <a href="tel:+33100000000" class="btn btn-azur btn-block" aria-label="Appeler ToitSûr">📞 Appeler maintenant</a>
         <div class="channel-or">OU</div>
-        <a href="https://wa.me/33100000000" class="btn btn-ghost-tile btn-block" aria-label="Envoyer un message WhatsApp à ToitSûr">💬 Envoyer un message</a>
+        <a href="https://wa.me/33100000000" class="btn btn-ghost-azur btn-block" aria-label="Envoyer un message WhatsApp à ToitSûr">💬 Envoyer un message</a>
 
         <div class="contact-info">
           <p>📍 Île-de-France — 94 · 77 · 91</p>
@@ -1049,7 +1058,7 @@ section { padding: clamp(64px, 9vw, 110px) 0; position: relative; }
           <label for="rgpd">J'accepte que mes données soient utilisées pour traiter ma demande de devis. *</label>
         </div>
 
-        <button type="submit" class="btn btn-tile btn-block">Envoyer ma demande</button>
+        <button type="submit" class="btn btn-azur btn-block">Envoyer ma demande</button>
       </form>
 
     </div>
